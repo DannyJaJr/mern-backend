@@ -109,15 +109,13 @@ const login = async (req, res) => {
 }
 
 const profile = async (req, res) => {
-    console.log('Inside of Profile');
+    console.log('Inside of PROFILE route');
     res.json({
         id: req.user.id,
         name: req.user.name,
         email: req.user.email
     });
 }
-
-
 
 // routes
 // GET -> /api/users/test
@@ -129,8 +127,7 @@ router.post('/signup', signup);
 // POST -> api/users/login (Public)
 router.post('/login', login);
 
-// GET api/users/profile (Private)
-// jwt = jason web token
+// GET /api/users/profile (Private)
 router.get('/profile', passport.authenticate('jwt', { session: false }), profile);
 // router.get('/all-users', fetchUsers);
 
