@@ -23,8 +23,8 @@ router.get('/test', test);
 // POST api/users/login (Public)
 // router.post('/login', login);
 
-// GET api/users/current (Private)
-router.get('/profile', passport.authenticate('jwt', { session: false }), profile);
-// router.get('/all-users', fetchUsers);
+// // GET api/users/current (Private)
+// router.get('/profile', passport.authenticate('jwt', { session: false }), profile);
+// // router.get('/all-users', fetchUsers);
 
 module.exports = router; 
