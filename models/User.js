@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 // User Schema
 const userSchema = new Schema({
     name: {
-        tyoe: String,
+        type: String,
         required: true
     },
     email: {
@@ -12,7 +12,7 @@ const userSchema = new Schema({
         required: true,
         unique: true
     },
-    password : {
+    password: {
         type: String,
         required: true,
         minlength: 8
@@ -20,12 +20,12 @@ const userSchema = new Schema({
     timesLoggedIn: {
         type: Number,
         default: 0
-    }, 
+    },
     date: {
-        type: date,
+        type: Date,
         default: Date.now()
     }
 })
 
 const User = mongoose.model('User', userSchema);
-module.exports = User
+module.exports = User;
